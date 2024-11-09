@@ -2,69 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Gaming...</title>
     <link rel="stylesheet" href="gamingstyling.css">
+
+    <!-- Add PWA and Apple fullscreen tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
-   
-    <div class="control" id="right" style="bottom: 50px; left: 150px;">→</div>
-    <div class="control" id="left" style="bottom: 50px; right: 650px;">←</div>
-    <div class="control" id="down" style="bottom: 250px; right: 90px;">↓</div>
-    <div class="control" id="jump" style=" bottom: 250px; right: 10px;">↑</div>
-    <div class="control" id="shift" style="bottom: 250px; left: 90px;">Shift</div>
-      <script>
-    // Create the popup element
-    const popup = document.createElement('div');
-    const message = document.createElement('div');
-    const messageText = document.createElement('p');
+
+    <script>
+        // Create the popup element
+        const popup = document.createElement('div');
+        const message = document.createElement('div');
+        const messageText = document.createElement('p');
+        
+        // Set message text
+        messageText.textContent = "Please rotate your phone to landscape mode for the best experience.";
     
-    // Set message text
-    messageText.textContent = "Please rotate your phone to landscape mode for the best experience.";
+        // Style the popup and message using JavaScript
+        popup.style.position = 'fixed';
+        popup.style.top = 0;
+        popup.style.left = 0;
+        popup.style.right = 0;
+        popup.style.bottom = 0;
+        popup.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        popup.style.display = 'flex';
+        popup.style.justifyContent = 'center';
+        popup.style.alignItems = 'center';
+        popup.style.zIndex = 1000;
+        popup.style.visibility = 'hidden'; // Initially hidden
+    
+        message.style.padding = '20px';
+        message.style.backgroundColor = 'white';
+        message.style.borderRadius = '8px';
+        message.style.textAlign = 'center';
+        message.style.fontSize = '18px';
+        message.style.fontWeight = 'bold';
+        message.style.color = '#333';
+    
+        // Append message to the popup, and popup to the body
+        message.appendChild(messageText);
+        popup.appendChild(message);
+        document.body.appendChild(popup);
+    
+        // Function to check device orientation
+        function checkOrientation() {
+          if (window.innerHeight > window.innerWidth) {
+            popup.style.visibility = 'visible'; // Show the popup in portrait mode
+          } else {
+            popup.style.visibility = 'hidden'; // Hide the popup in landscape mode
+          }
+        }
+    
+        // Initial check
+        checkOrientation();
+    
+        // Add event listener for orientation changes
+        window.addEventListener('resize', checkOrientation);
+      </script>
 
-    // Style the popup and message using JavaScript
-    popup.style.position = 'fixed';
-    popup.style.top = 0;
-    popup.style.left = 0;
-    popup.style.right = 0;
-    popup.style.bottom = 0;
-    popup.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    popup.style.display = 'flex';
-    popup.style.justifyContent = 'center';
-    popup.style.alignItems = 'center';
-    popup.style.zIndex = 1000;
-    popup.style.visibility = 'hidden'; // Initially hidden
-
-    message.style.padding = '20px';
-    message.style.backgroundColor = 'white';
-    message.style.borderRadius = '8px';
-    message.style.textAlign = 'center';
-    message.style.fontSize = '18px';
-    message.style.fontWeight = 'bold';
-    message.style.color = '#333';
-
-    // Append message to the popup, and popup to the body
-    message.appendChild(messageText);
-    popup.appendChild(message);
-    document.body.appendChild(popup);
-
-    // Function to check device orientation
-    function checkOrientation() {
-      if (window.innerHeight > window.innerWidth) {
-        popup.style.visibility = 'visible'; // Show the popup in portrait mode
-      } else {
-        popup.style.visibility = 'hidden'; // Hide the popup in landscape mode
-      }
-    }
-
-    // Initial check
-    checkOrientation();
-
-    // Add event listener for orientation changes
-    window.addEventListener('resize', checkOrientation);
-  </script>
+    <div class="drop-3454">
+        <div class="control" id="shift" style="bottom: 250px; left: 90px;">Shift</div>
+    </div>
   
-
+    <div class="dev-2345">
+        <div class="control" id="down" style="bottom: 250px; right: 90px;">↓</div>
+        <div class="control" id="jump" style="bottom: 250px; right: 10px;">↑</div>
+    </div>
+    
+    <div class="nov-2352">
+        <div class="control" id="left">←</div>
+        <div class="control" id="right">→</div>
+    </div>
+    
     <canvas id="canvas1"></canvas>
     <canvas id="canvas2"></canvas>
 
