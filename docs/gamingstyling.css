@@ -14,9 +14,49 @@ body {
     /* For Internet Explorer */
 
 }
+.nov-2352{
+    position:absolute;
+    z-index: 100;
+    top: 200px;
+    left:60px; 
+    display: flex;
+    justify-content:space-between;
+    overflow: hidden;
+    width: 200px;
+    height: 100px;
+  
+  }
+
+
+  .drop-3454{
+    position:absolute;
+    z-index: 100;
+    top: 20px;
+    left:130px; 
+    display: flex;
+    justify-content:space-between;
+    overflow: hidden;
+   
+   
+  }
+
+
+  .dev-2345{
+      display: flex;
+    
+    position:absolute;
+    z-index: 100;
+    top: 10px;
+    right:50px; 
+    justify-content:space-between;
+    overflow: hidden;
+   
+    width: 150px;
+  
+  }
 
 .control {
-    position: absolute;
+  
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -28,7 +68,12 @@ body {
     justify-content: center;
     cursor: pointer;
     user-select: none;
+ 
 }
+
+
+
+
 
 .control:active {
     background-color: rgba(0, 0, 0, 0.8);
@@ -59,6 +104,8 @@ canvas {
     user-select: none;
     z-index: 100;  /* To make sure the control is above other elements */
 }
+
+
 
 
 @media (min-width: 1024px) {
